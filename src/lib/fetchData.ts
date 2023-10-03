@@ -4,7 +4,7 @@ export const fetchWeatherData = async () => {
 
   const median = {
     temperature: round((ritzensee.temperature + ramseiden.temperature) / 2, 1),
-    humidity: round((ritzensee.humidty + ramseiden.humidty) / 2, 0),
+    humidity: round((ritzensee.humidity + ramseiden.humidity) / 2, 0),
   }
 
   return {
@@ -19,10 +19,6 @@ export const fetchWeatherStationData = async (type: "ritzensee" | "ramseiden") =
 
   const response = await fetch(`${process.env.ENDPOINT_URL}?${arg}`, {
     referrer: process.env.ENDPOINT_REFERRER,
-    cache: "force-cache",
-    next: {
-      tags: ["weather"]
-    }
   });
   const text = await response.text();
 
@@ -34,7 +30,7 @@ export const fetchWeatherStationData = async (type: "ritzensee" | "ramseiden") =
 
   return {
     temperature: round(Number(tempGroups?.temp.replace(',', '.') ?? 0), 1),
-    humidty: round(Number(humidityGroups?.humidity ?? 0), 0),
+    humidity: round(Number(humidityGroups?.humidity ?? 0), 0),
   }
 }
 
