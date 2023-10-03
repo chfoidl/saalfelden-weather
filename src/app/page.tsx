@@ -19,3 +19,9 @@ export default function Home() {
 }
 
 export const runtime = "edge";
+
+export const metadata = {
+  title: "Saalfelden Weather",
+  description: "Get current weather data of Saalfelden city",
+  robots: "noindex, nofollow",
+}
