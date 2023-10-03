@@ -6,3 +6,4 @@ export const GET = async () => {
   return new Response(JSON.stringify(data), { status: 200 });
 }
 
+export const runtime = "edge";
