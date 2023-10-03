@@ -19,7 +19,6 @@ export const fetchWeatherStationData = async (type: "ritzensee" | "ramseiden") =
 
   const response = await fetch(`${process.env.ENDPOINT_URL}?${arg}`, {
     cache: "no-cache",
-    referrer: process.env.ENDPOINT_REFERRER,
   });
   const text = await response.text();
 
