@@ -16,7 +16,7 @@ export const DataProvider = ({ children }: PropsWithChildren) => {
 
   const fetchData = async () => {
     const response = await fetch("/api/data", {
-      cache: "no-cache"
+      cache: "no-store"
     });
     const data = await response.json() as Value;
 
