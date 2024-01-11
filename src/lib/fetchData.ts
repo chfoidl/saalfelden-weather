@@ -22,8 +22,9 @@ export const fetchWeatherStationData = async (type: "ritzensee" | "ramseiden") =
     referrer: process.env.ENDPOINT_REFERRER,
   });
   const text = await response.text();
+  console.log(text)
 
-  const tempRegex = /<b>\s*(?<temp>[0-9,]+)/gm;
+  const tempRegex = /<b>\s*(?<temp>\-?[0-9,]+)/gm;
   const humidityRegex = /(?<humidity>[0-9,]+)%rF/gm;
 
   const tempGroups = tempRegex.exec(text)?.groups;
